@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+# Ramirez Azul NC 0441  
 
 print("Detección de Transacciones Fraudulentas Ramirez Azul NC 0441")
 transacciones = {
@@ -21,3 +22,17 @@ print(agrupado['Ubicacion_Inusual'].mean())
 print("monto maxima")
 #  Máximo en cada grupo 
 print(agrupado['Es_Fraude'].max())
+
+print("--Ramirez Azul--")
+print("+-+-+-+-+Segunda parte+-+-+-+-+")
+print("agregaciones multiples")
+print("mean --> promedio, sum --> suma")
+print("max --> maximo, min --> suma")
+resultado_agregado = agrupado['Monto'].agg(['mean', 'sum', 'max', 'min'])
+print(resultado_agregado)
+print("Agrupacion por varias columnas")
+print("Agrega columna al dataframe")
+print("Columna Team --> Equipo")
+df['Equipo'] = ['A','B','A','B','A','B']
+agrupado_multiple = df.groupby(['Equipo', 'Ubicacion_Inusual'])['Monto'].mean()
+print(agrupado_multiple)
